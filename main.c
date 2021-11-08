@@ -35,6 +35,8 @@ int buttonWasDown[10] = {0};
 int buttonJustReleased[10] = {0};
 int score = 0;
 
+int winningScore;
+
 int main(void) {
   // Manipulate REG_DISPCNT here to set Mode 3. //
   REG_DISPCNT = MODE3 | BG2_ENABLE;
@@ -92,6 +94,7 @@ int main(void) {
         cs.currentBuffs = 0;
         cs.buffdurations[0] = 0;
 
+        winningScore = randint(5, 12);
       break;
 
       case PLAY:
@@ -203,7 +206,7 @@ int main(void) {
         }
         collisionType = 0;
         score++;
-        if (score == 10) {
+        if (score >= winningScore) {
           state = WIN;
         } else {
           state = PLAY;
@@ -247,6 +250,10 @@ int main(void) {
         drawString(50, 3, "up arrow = move platform up", WHITE);
         drawString(60, 3, "down arrow = move platform down", WHITE);
         drawString(70, 3, "select = go back to title screen", WHITE);
+
+        drawString(90, 3, "Goal of the game:", WHITE);
+        drawString(100, 3, "Don't let the rabbit fall!", WHITE);
+        drawString(110, 3, "For how long? Who knows?", WHITE);
         state = CONTROLS;
       break;
 

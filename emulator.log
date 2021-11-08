@@ -20,8 +20,8 @@ Starting Mednafen 1.22.2
     Failed: Error opening file "/cs2110/.mednafen/pgconfig/BoUnCyBoI.gba.cfg": No such file or directory
 
    ROM:       452KiB
-   ROM CRC32: 0xd3219218
-   ROM MD5:   0xa8955569243bc84fc2dfaee8bd83fd7a
+   ROM CRC32: 0x7e9d75b6
+   ROM MD5:   0x4c750dd9d75c1c62fef4333458241945
 
   Loading custom palette from "/cs2110/.mednafen/palettes/gba.pal"...
    Error: Error opening file "/cs2110/.mednafen/palettes/gba.pal": No such file or directory
