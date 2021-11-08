@@ -14,10 +14,11 @@ from falling and crash landing into the moon.
 Players can move with the arrow keys, but they will not be able to go above
 half way up the screen.
 
-The rabbit will be bouncing around the screen off the edges and off the platform
-the player controls. The player will lose if the rabbit falls onto the moon and
-crash lands. The player will win when they have bounced the rabbit enough times.
-However, the number of times to win will be random each time they play the game.
+The rabbit will be bouncing around the screen. It will collide and bounce
+off the edges and off the platform the player controls. The player will lose if
+the rabbit falls onto the moon and crash lands. The player will win when they
+have bounced the rabbit enough times. However, the number of times to win will
+be random each time they play the game.
 
 Sometimes power-ups will spawn (max of 3 on the screen). If the rabbit comes
 into contact with these power ups its speed will double. These power ups will
