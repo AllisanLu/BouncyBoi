@@ -14,7 +14,7 @@ PROGNAME = BoUnCyBoI
 # that will be compiled into your program. For example
 # if you have main.c and myLib.c then in the following
 # line you would put main.o and myLib.o
-OFILES = gba.o font.o main.o movement.o collision.o images/background1.o images/background2.o images/gameover.o images/bouncyboi.o images/verybouncyboi.o images/platform.o images/win.o images/win1.o
+OFILES = gba.o font.o main.o movement.o collision.o images/background1.o images/background2.o images/gameover.o images/bouncyboi.o images/verybouncyboi.o images/platform.o images/win.o images/win1.o images/moon.o
 
 ################################################################################
 # These are various settings used to make the GBA toolchain work

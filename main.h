@@ -24,7 +24,7 @@
 *
 */
 
-#define MAX_BUFFS (5)
+#define MAX_BUFFS (3)
 
 struct boi {
     int row;

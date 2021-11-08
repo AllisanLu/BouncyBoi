@@ -17,6 +17,7 @@
 #include "images/platform.h"
 #include "images/win.h"
 #include "images/win1.h"
+#include "images/moon.h"
 
 enum gba_state {
   START,
@@ -136,7 +137,7 @@ int main(void) {
           state = BOUNCING;
         }
 
-        if (randint(0, 100) > 90 && cs.buffAmount < MAX_BUFFS) {
+        if (randint(0, 1000) > 990 && cs.buffAmount < MAX_BUFFS) {
           struct powerUp boost;
           boost.row = randint(10, HEIGHT/2);
           boost.col = randint(0, WIDTH);
@@ -151,12 +152,13 @@ int main(void) {
             cs.boi.speedC = cs.boi.speedC * 2;
 
             //add buff to slow down checker
-            cs.buffdurations[cs.currentBuffs] = 20;
+            cs.buffdurations[cs.currentBuffs] = 35;
             cs.currentBuffs++;
             //remove
             for (int j = i; j < cs.buffAmount - 1; j++) {
               cs.buffs[j] = cs.buffs[j+1]; 
             }
+            cs.buffAmount--;
           }
         }
         
@@ -164,22 +166,22 @@ int main(void) {
       break;
 
       case BOUNCING:
-        for (int i = cs.currentBuffs; i >= 0; i--) {
+        for (int i = cs.currentBuffs - 1; i >= 0; i--) {
           if (cs.buffdurations[i] > 0) {
             cs.buffdurations[i]--;
           }
-          // if (cs.buffdurations[i] == 0) {
-          //   if (cs.boi.speedR > 1 || cs.boi.speedR < -1) {
-          //     cs.boi.speedR = cs.boi.speedR / 2;
-          //   } 
-          //   if (cs.boi.speedC > 1 || cs.boi.speedC < -1) {
-          //     cs.boi.speedC = cs.boi.speedC / 2;
-          //   }
-          //   for (int j = i; j < cs.currentBuffs - 1; j++) {
-          //     cs.buffdurations[j] = cs.buffdurations[j+1]; 
-          //   }
-          //   cs.currentBuffs--;
-          // }
+          if (cs.buffdurations[i] == 0) {
+            if (cs.boi.speedR > 1 || cs.boi.speedR < -1) {
+              cs.boi.speedR = cs.boi.speedR / 2;
+            } 
+            if (cs.boi.speedC > 1 || cs.boi.speedC < -1) {
+              cs.boi.speedC = cs.boi.speedC / 2;
+            }
+            for (int j = i; j < cs.currentBuffs - 1; j++) {
+              cs.buffdurations[j] = cs.buffdurations[j+1]; 
+            }
+            cs.currentBuffs--;
+          }
         }
         cs.boi.speedR = -cs.boi.speedR;
         if (collisionType == 1) {           
@@ -278,6 +280,7 @@ int main(void) {
           struct powerUp holder = cs.buffs[i];
           drawRectDMA(holder.row, holder.col, 1, 1, WHITE);
         }
+        drawImageDMA(HEIGHT - MOON_HEIGHT, 0, MOON_WIDTH, MOON_HEIGHT, moon);
         drawImageDMA(cs.boi.row, cs.boi.col, cs.boi.size, cs.boi.size, bouncyboi);
         drawString(10, 5, status, WHITE);
         sprintf(num, "%d", score);
@@ -295,6 +298,7 @@ int main(void) {
         drawRectDMA(10, 42, 118, 10, BLACK);
 
       //draw          
+        drawImageDMA(HEIGHT - MOON_HEIGHT, 0, MOON_WIDTH, MOON_HEIGHT, moon);
         drawImageDMA(cs.player.row, cs.player.col, cs.player.width, cs.player.height, platform);
         drawImageDMA(cs.boi.row, cs.boi.col, cs.boi.size, cs.boi.size, verybouncyboi);
       

@@ -19,9 +19,9 @@ Starting Mednafen 1.22.2
    Loading override settings from "/cs2110/.mednafen/pgconfig/BoUnCyBoI.gba.cfg"...
     Failed: Error opening file "/cs2110/.mednafen/pgconfig/BoUnCyBoI.gba.cfg": No such file or directory
 
-   ROM:       443KiB
-   ROM CRC32: 0x4b57cb54
-   ROM MD5:   0x369b3b05203b27acd811eac0eb5d6ec2
+   ROM:       452KiB
+   ROM CRC32: 0xd3219218
+   ROM MD5:   0xa8955569243bc84fc2dfaee8bd83fd7a
 
   Loading custom palette from "/cs2110/.mednafen/palettes/gba.pal"...
    Error: Error opening file "/cs2110/.mednafen/palettes/gba.pal": No such file or directory
