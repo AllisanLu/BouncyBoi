@@ -5,7 +5,7 @@ A cute little moon rabbit is just too happy to eat his rice cakes! BOING, oh no
 there he goes. Our little moon rabbit has jumped into space! Help him land on
 the moon safely and not crash land.
 
-##About this game
+###About this game
 In this game, you will be controlling a platform to stop a little moon rabbit
 from falling and crash landing into the moon.
 
@@ -15,7 +15,7 @@ half way up the screen.
 The rabbit will be bouncing around the screen off the edges and off the platform
 the player controls.
 
-##Controls
+###Controls
 * Movement: arrow keys
 * Return to title screen: select key (back)
 * Proceed: A (Z)
