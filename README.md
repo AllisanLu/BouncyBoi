@@ -1,6 +1,8 @@
 # BouncyBoi
 GBA emulator game created with C
 
+![BOI](src/images/bouncyboi.png)
+
 A cute little moon rabbit is just too happy to eat his rice cakes! BOING, oh no
 there he goes. Our little moon rabbit has jumped into space! Help him land on
 the moon safely and not crash land.
