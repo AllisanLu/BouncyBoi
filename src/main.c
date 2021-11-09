@@ -21,9 +21,11 @@
 
 enum gba_state {
   START,
-  SETUP,
   INITCONTROLS,
   CONTROLS,
+  CREDITSINIT,
+  CREDITS,
+  SETUP,
   PLAY,
   BOUNCING,
   WIN,
@@ -236,10 +238,26 @@ int main(void) {
         } 
 
         if (buttonJustReleased[BUTTON_A]) {
-          state = INITCONTROLS;
+          state = CREDITSINIT;
         }
         break;
       
+      case CREDITSINIT:
+        fillScreenDMA(BLACK);
+        drawCenteredString(10, 0, WIDTH, 1, "Brought to you by", WHITE);
+        drawString(20, 3, "Allison Lu - Programming", WHITE);
+        drawString(30, 13, "+ Background Sprites", WHITE);        
+        drawString(40, 3, "Cynthia Peng - Creation of Bouncy Boi", WHITE);
+        drawString(50, 13, "aka bouncy boi sprite", WHITE);
+        state = CREDITS;
+      break;
+
+      case CREDITS:
+        if(buttonJustReleased[BUTTON_A]) {
+          state = INITCONTROLS;
+        }
+      break;
+
       case INITCONTROLS:
         fillScreenDMA(BLACK);
         drawCenteredString(10, 0, WIDTH, 1, "CONTROLS", WHITE);
